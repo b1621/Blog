@@ -33,7 +33,7 @@
       <input type="password" class="form-control" id="confirm-password" placeholder="confirm-password">
    </div>
    <div class="d-flex flex-row align-items-center justify-content-between">
-      <a href="#">Login</a>
+      <a href="signin.php">Login</a>
         <button  class="btn btn-primary" value = "SignUp" name="SignUp">Create Account</button>
           </div>
        </form>
