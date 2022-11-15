@@ -20,21 +20,21 @@
         <div class="mb-4">
             <h3>Create a Blog</h3>
         </div>
-             <form>
+             <form action="../process/create_blog.inc.php" method="post">
   <!-- Title input -->
   <div class="form-outline mb-4">
-    <input type="text" id="form4Example1" class="form-control" placeholder="Title" />
+    <input type="text" id="form4Example1" name="title" class="form-control" placeholder="Title" />
     
   </div>
   <!-- Author input -->
   <div class="form-outline mb-4">
-    <input type="text" id="form4Example1" class="form-control" placeholder="Author" />
+    <input type="text" id="form4Example1" name="author" class="form-control" placeholder="Author" />
     
   </div>
 
   <!-- Article input -->
   <div class="form-outline mb-5">
-    <textarea class="form-control" id="form4Example3" rows="10" placeholder="Article"></textarea>
+    <textarea class="form-control" id="form4Example3" name="article" rows="10" placeholder="Article"></textarea>
     
   </div>
 
