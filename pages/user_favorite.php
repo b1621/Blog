@@ -60,7 +60,10 @@ if (isset($blogids)) {
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog[0]['Author'];  ?></h6>
                         <p class="card-text"><small class="text-muted"><?php echo $blog[0]['Date'];  ?></small></p>
                         <p class="card-text"><?php echo $blog[0]['Article'];  ?></p>
-                        <a href="#" class="card-link">Card link</a>
+                        <form action="./view.php" method="post" style="display: inline;">
+                            <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
+                            <button type="submit" class="btn">View Article</button>
+                        </form>
                         <form action="../process/remove_fav.php" method="post" style="display: inline;">
                             <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
                             <button type="submit" class="btn" style="color: red;">Remove</button>
