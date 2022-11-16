@@ -13,8 +13,13 @@ if (isset($_SESSION['ID'])) {
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // echo $_POST['blogid'];
-        // $blogid = $_POST['blogid'];
-        // echo $blogid;
+        $userid = $_SESSION['ID'];
+        $blogid = $_POST['blogid'];
+
+        $stm = $pdo->prepare('INSERT INTO favorite (User_id, Blog_id) VALUES (:userid, :blogid)');
+        $stm->bindValue(':blogid', $blogid);
+        $stm->bindValue(':userid', $userid);
+        $stm->execute();
     }
 ?>
 
