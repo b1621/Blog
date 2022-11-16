@@ -54,7 +54,7 @@ if (isset($blogids)) {
         <?php else : ?>
             <?php foreach ($blogs as $blog) : ?>
 
-                <div class="card mb-3" style="width :60%; margin:0 auto;">
+                <div class="card mb-3 shadow-sm rounded" style="width :60%; margin:0 auto;">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $blog[0]['Title'];  ?></h5>
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog[0]['Author'];  ?></h6>

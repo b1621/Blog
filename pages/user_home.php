@@ -36,7 +36,7 @@ if (isset($_SESSION['ID'])) {
 
     <body>
         <?php include_once './usernav.php' ?>
-        <div class="container border pt-4" style="">
+        <div class="container pt-4" style="">
 
             <?php if (empty($result)) : ?>
                 <div>
@@ -44,13 +44,17 @@ if (isset($_SESSION['ID'])) {
                 </div>
             <?php else : ?>
                 <?php foreach ($result as $i => $blog) : ?>
-                    <div class="card mb-3" style="width :60%; margin:0 auto;">
+                    <div class="card mb-3 shadow-sm rounded" style="width :60%; margin:0 auto;">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $blog['Title'];  ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog['Author'];  ?></h6>
                             <p class="card-text"><small class="text-muted"><?php echo $blog['Date'];  ?></small></p>
                             <p class="card-text"><?php echo $blog['Article'];  ?></p>
-                            <a href="#" class="card-link">Card link</a>
+
+                            <form action="./view.php" method="post" style="display: inline;">
+                                <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
+                                <button type="submit" class="btn">View Article</button>
+                            </form>
                             <form action="" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                                 <button type="submit" class="btn">Add Favorite</button>
