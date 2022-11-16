@@ -24,6 +24,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $error[] = 'confirm-password is required';
     }
     if(empty($error)){
+
+        $query = "SELECT * FROM user_security WHERE Email = '".$_POST['email']."' ";
+        $result=mysqli_query($con, $query);
+
+        if($row = mysqli_fetch_assoc($result)){
+            $error[] = 'Already have an account';
+            header('Location: ../pages/signin.php?User = Already have an account');
+        }
+        else{
         $statment = $pdo->prepare('INSERT INTO user_security (User_name, Email, Password, Date) VALUES(:User_name, :Email, :Password, :date)');
         $statment->bindValue(':User_name',$name);
         $statment->bindValue(':Email',$email);
@@ -33,5 +42,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         header('Location: ../pages/signin.php?Success = Account Created Successfully');
         exit();
+        }
     }
 }

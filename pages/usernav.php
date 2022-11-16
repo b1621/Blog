@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -21,9 +22,10 @@
         </li>
       </ul>
       <form class="d-flex">
-        <h5>user name</h5>
+        <h5> <?php  echo 'welcome  ' . $_SESSION['name'] . '  ';?></h5>
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-        <button class="btn btn-outline-success" type="submit">Logout</button>
+        <button class="btn btn-outline-success" type="submit"> <a  href = "../process/logout.php?logout">Logout</a></button>
+        
       </form>
     </div>
   </div>
