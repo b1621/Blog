@@ -16,8 +16,17 @@ $blogids = [];
 foreach ($result as $x => $val) {
     $blogids[] = $val['Blog_id'];
 }
+
 if (isset($blogids)) {
-    echo 'there is vlaue';
+
+    $blogs = [];
+    foreach ($blogids as $id) {
+        $stm = $pdo->prepare("SELECT * FROM blog WHERE Blog_id = :id");
+        $stm->bindValue(':id', $id);
+        $stm->execute();
+        $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+        $blogs[] = $res;
+    }
 }
 ?>
 
@@ -35,7 +44,34 @@ if (isset($blogids)) {
 
 <body>
     <?php include_once './usernav.php'; ?>
-    favorite
+
+    <div class="container border pt-4">
+
+        <?php if (empty($blogids)) : ?>
+            <div class="mt-4">
+                <h3>No Favorite blog yet!!!</h3>
+            </div>
+        <?php else : ?>
+            <?php foreach ($blogs as $blog) : ?>
+
+                <div class="card mb-3" style="width :60%; margin:0 auto;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $blog[0]['Title'];  ?></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog[0]['Author'];  ?></h6>
+                        <p class="card-text"><small class="text-muted"><?php echo $blog[0]['Date'];  ?></small></p>
+                        <p class="card-text"><?php echo $blog[0]['Article'];  ?></p>
+                        <a href="#" class="card-link">Card link</a>
+                        <form action="" method="post" style="display: inline;">
+                            <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
+                            <button type="submit" class="btn">Add Favorite</button>
+                        </form>
+
+                    </div>
+                </div>
+            <?php endforeach ?>
+        <?php endif ?>
+    </div>
+
 </body>
 
 </html>
