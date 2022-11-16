@@ -27,6 +27,7 @@ if(isset($_POST['Login']))
                 if($userPassword == $db_password){
                     $_SESSION["A"] = $_POST['email'];
                     $_SESSION["ID"] = $row['Id'];
+                    $_SESSION["name"] = $row['User_name'];
 
                     header("location:../pages/user_home.php");
                 }
@@ -44,7 +45,7 @@ if(isset($_POST['Login']))
             header("location:../pages/signin.php?Empty = Please Fill All Fields");
         }
     }
-}
+} 
 else{
     echo 'not working';
 

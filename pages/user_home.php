@@ -1,6 +1,6 @@
 <?php
 
-// session_start();
+session_start();
 
 
 // if(isset($_SESSION['ID'])){
@@ -10,9 +10,13 @@
 // else{
 // header("location:signin.php");
 // }
-?>
+// ?>
 <?php
 include_once "../process/db_connection.php";
+
+if(isset($_SESSION['ID'])){
+    
+
 $statement = $pdo->prepare('SELECT * from blog');
 $statement->execute();
 $result = $statement->fetchall(PDO::FETCH_ASSOC);
@@ -65,3 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 
 </html>
+<?php
+
+}
+else{
+header("location:signin.php");
+}
+?>
