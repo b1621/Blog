@@ -45,7 +45,7 @@ if (isset($blogids)) {
 <body>
     <?php include_once './usernav.php'; ?>
 
-    <div class="container border pt-4">
+    <div class="container pt-4">
 
         <?php if (empty($blogids)) : ?>
             <div class="mt-4">
@@ -61,9 +61,9 @@ if (isset($blogids)) {
                         <p class="card-text"><small class="text-muted"><?php echo $blog[0]['Date'];  ?></small></p>
                         <p class="card-text"><?php echo $blog[0]['Article'];  ?></p>
                         <a href="#" class="card-link">Card link</a>
-                        <form action="" method="post" style="display: inline;">
+                        <form action="../process/remove_fav.php" method="post" style="display: inline;">
                             <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
-                            <button type="submit" class="btn">Add Favorite</button>
+                            <button type="submit" class="btn" style="color: red;">Remove</button>
                         </form>
 
                     </div>
