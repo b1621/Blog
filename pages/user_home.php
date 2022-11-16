@@ -18,9 +18,12 @@ $statement->execute();
 $result = $statement->fetchall(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // echo $_POST['blogid'];
-    // $blogid = $_POST['blogid'];
-    // echo $blogid;
+    $blogid = $_POST['blogid'];
+    $favorite = 1;
+    $stm = $pdo->prepare('INSERT INTO favorite (Blog_id, Favorite) VALUES (:blogid, :favorite)');
+    $stm->bindValue(':favorite', $favorite);
+    $stm->bindValue(':blogid', $blogid);
+    $stm->execute();
 }
 ?>
 
