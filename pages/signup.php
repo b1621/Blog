@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<form  action="signup_process.php" method="POST">
+<form  action="../process/signup_process.php" method="POST">
 <div class="container">
   <div class="row justify-content-center">
   <div class="col-md-5">
@@ -19,18 +19,18 @@
       <div class="card-body py-md-4">
        <form _lpchecked="1">
           <div class="form-group">
-             <input type="text" class="form-control" id="name" placeholder="Name">
+             <input type="text" class="form-control" name ="name" id="name" placeholder="Name">
         </div>
         <div class="form-group">
-             <input type="email" class="form-control" id="email" placeholder="Email">
+             <input type="email" class="form-control" name ="email" id="email" placeholder="Email">
                             </div>
                             
                           
    <div class="form-group">
-     <input type="password" class="form-control" id="password" placeholder="Password">
+     <input type="password" class="form-control" name ="password" id="password" placeholder="Password">
    </div>
    <div class="form-group">
-      <input type="password" class="form-control" id="confirm-password" placeholder="confirm-password">
+      <input type="password" class="form-control" name ="confirm-password" id="confirm-password" placeholder="confirm-password">
    </div>
    <div class="d-flex flex-row align-items-center justify-content-between">
       <a href="signin.php">Login</a>

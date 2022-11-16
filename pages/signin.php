@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
   <div class="col-md-5">
    <div class="card">
      <h2 class="card-title text-center">Login </h2>
-     
+    
 
       <div class="card-body py-md-4">
        <form _lpchecked="1">
@@ -24,7 +25,7 @@
         <div class="form-group">
              <input type="email" class="form-control" name ="email" id="email" placeholder="Email">
                             </div>
-                            
+            
                           
    <div class="form-group">
      <input type="password" class="form-control" name = "password" id="password" placeholder="Password">
