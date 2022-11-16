@@ -11,13 +11,13 @@ $article = nl2br($_POST['article']);
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!$_POST['title']){
-        $error[] = 'title is required';
+        $error['title'] = 'title is required';
     }
     if(!$_POST['author']){
-        $error[] = 'author is required';
+        $error['author'] = 'author is required';
     }
     if(!$_POST['article']){
-        $error[] = 'article is required';
+        $error['article'] = 'article is required';
     }
     if(empty($error)){
         $statment = $pdo->prepare('INSERT INTO blog (Title, Author, Article, Date) VALUES(:title, :author, :article, :date)');
@@ -30,3 +30,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit();
     }
 }
+
