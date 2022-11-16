@@ -15,7 +15,7 @@ session_start();
 </head>
 
 <body>
-    <?php include_once './usernav.php'; ?>
+    <?php include_once '.components/usernav.php'; ?>
     favorite
 </body>
 
