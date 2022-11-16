@@ -1,5 +1,24 @@
 <?php
 session_start();
+
+include_once '../process/db_connection.php';
+
+$user_id =  $_SESSION['ID'];
+
+$statment = $pdo->prepare('SELECT * FROM favorite WHERE User_id = :userid');
+$statment->bindValue(':userid', $user_id);
+$statment->execute();
+
+$result = $statment->fetchAll(PDO::FETCH_ASSOC);
+
+$blogids = [];
+
+foreach ($result as $x => $val) {
+    $blogids[] = $val['Blog_id'];
+}
+if (isset($blogids)) {
+    echo 'there is vlaue';
+}
 ?>
 
 <!DOCTYPE html>
