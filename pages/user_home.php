@@ -17,6 +17,11 @@ $statement = $pdo->prepare('SELECT * from blog');
 $statement->execute();
 $result = $statement->fetchall(PDO::FETCH_ASSOC);
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo $_POST['blogid'];
+    // $blogid = $_POST['blogid'];
+    // echo $blogid;
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +36,30 @@ $result = $statement->fetchall(PDO::FETCH_ASSOC);
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <div class="container border pt-4" style="">
 
         <?php foreach ($result as $i => $blog) : ?>
@@ -41,7 +70,11 @@ $result = $statement->fetchall(PDO::FETCH_ASSOC);
                     <p class="card-text"><?php echo $blog['Article'];  ?></p>
                     <p class="card-text"><small class="text-muted"><?php echo $blog['Date'];  ?></small></p>
                     <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <form action="" method="post" style="display: inline;">
+                        <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
+                        <button type="submit" class="btn">Add Favorite</button>
+                    </form>
+
                 </div>
             </div>
         <?php endforeach ?>
