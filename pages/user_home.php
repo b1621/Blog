@@ -18,7 +18,7 @@ $statement->execute();
 $result = $statement->fetchall(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo $_POST['blogid'];
+    // echo $_POST['blogid'];
     // $blogid = $_POST['blogid'];
     // echo $blogid;
 }
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-<?php include_once './usernav.php' ?>
+    <?php include_once './usernav.php' ?>
     <div class="container border pt-4" style="">
 
         <?php foreach ($result as $i => $blog) : ?>
@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="card-body">
                     <h5 class="card-title"><?php echo $blog['Title'];  ?></h5>
                     <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog['Author'];  ?></h6>
-                    <p class="card-text"><?php echo $blog['Article'];  ?></p>
                     <p class="card-text"><small class="text-muted"><?php echo $blog['Date'];  ?></small></p>
+                    <p class="card-text"><?php echo $blog['Article'];  ?></p>
                     <a href="#" class="card-link">Card link</a>
                     <form action="" method="post" style="display: inline;">
                         <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
