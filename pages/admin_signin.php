@@ -10,12 +10,12 @@
 </head>
 <body>
 
-<form  action="../process/signin_process.php" method="POST">
+<form  action="../process/admin_signin_process.php" method="POST">
 <div class="container">
   <div class="row justify-content-center">
   <div class="col-md-5">
    <div class="card">
-     <h2 class="card-title text-center">Login </h2>
+     <h2 class="card-title text-center"> Admin Login </h2>
     
 
       <div class="card-body py-md-4">
