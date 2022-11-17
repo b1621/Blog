@@ -19,31 +19,31 @@ if(isset($_POST['Login']))
 
             $userPassword = md5($_POST['password']);
 
-            $query = "SELECT * FROM user_security WHERE Email = '".$_POST['email']."' ";
+            $query = "SELECT * FROM admin_security WHERE Email = '".$_POST['email']."' ";
             $result=mysqli_query($con, $query);
 
             if($row = mysqli_fetch_assoc($result)){
                 $db_password = $row['Password'];
                 if($userPassword == $db_password){
-
+                    
                     $_SESSION["ID"] = $row['Id'];
                     $_SESSION["name"] = $row['User_name'];
                     $_SESSION["email"] = $row['Email'];
 
-                    header("location:../pages/user_home.php");
+                    header("location:../pages/admin_home.php");
                 }
                 else{
-                    header("location:../pages/signin.php?Invalid = Please Enter correct email and password");
+                    header("location:../pages/admin_signin.php?Invalid = Please Enter correct email and password");
                 }
 
             }
             else{
-                header("location:../pages/signin.php?NotUser = Please Create Account First");
+                header("location:../pages/admin_signin.php?NotUser = Please Create Account First");
             }
         }
         else{
             // Send the error to the signin Page
-            header("location:../pages/signin.php?Empty = Please Fill All Fields");
+            header("location:../pages/admin_signin.php?Empty = Please Fill All Fields");
         }
     }
 } 

@@ -43,7 +43,7 @@ if (isset($blogids)) {
 </head>
 
 <body>
-    <?php include_once './usernav.php'; ?>
+    <?php include_once '.components/usernav.php'; ?>
 
     <div class="container pt-4">
 

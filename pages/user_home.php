@@ -35,8 +35,10 @@ if (isset($_SESSION['ID'])) {
     </head>
 
     <body>
-        <?php include_once './usernav.php' ?>
+
+        <?php include_once '.components/usernav.php' ?>
         <div class="container pt-4">
+
 
             <?php if (empty($result)) : ?>
                 <div>
