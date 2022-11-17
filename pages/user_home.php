@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-    <?php include_once '.components/usernav.php' ?>
+    <?php include_once './components/usernav.php' ?>
     <div class="container border pt-4" style="">
 
         <?php if (empty($result)) : ?>
