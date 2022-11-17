@@ -36,7 +36,7 @@ if (isset($_SESSION['ID'])) {
 
     <body>
 
-        <?php include_once '.components/usernav.php' ?>
+        <?php include_once './components/usernav.php' ?>
         <div class="container pt-4">
 
 
