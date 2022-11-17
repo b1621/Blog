@@ -8,17 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+  <link href="css/styles2.css" rel="stylesheet" />
 </head>
 
 <body>
 
   <form action="../process/signin_process.php" method="POST">
 
+
     <div class="container" style="margin-top: 10%;">
 
 
       <div class="row justify-content-center">
+
 
         <div class="col-md-5">
           <div class="card">
