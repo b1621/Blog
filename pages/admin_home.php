@@ -60,6 +60,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                             <button type="submit" class="btn">Add Favorite</button>
                         </form>
+                        <form action="admin_remove.php" method="post" style="display: inline;">
+                            <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
+                            <button type="submit" class="btn">Add Favorite</button>
+                        </form>
 
                     </div>
                 </div>
