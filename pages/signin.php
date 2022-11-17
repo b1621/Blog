@@ -14,13 +14,36 @@
 <body >
 
   <form action="../process/signin_process.php" method="POST">
-    <div class="container">
-      <div class="row justify-content-center ">
+
+    <div class="container" style="margin-top: 10%;">
+
+
+      <div class="row justify-content-center">
+
         <div class="col-md-5">
           <div class="card">
-            <h2 class="card-title text-center">Login </h2>
+
+            <h2 class="card-title text-center my-3">Login </h2>
+            <?php if (!empty($_GET)) :
+            ?>
+              <?php if (array_key_exists('error', $_GET)) : ?>
+                <div style="color: red;" class="ml-4">
 
 
+                  <?php echo $_GET['error'];
+                  ?>
+                </div>
+              <?php else :
+              ?>
+                <div style="color: green;" class="ml-4">
+                  <?php echo $_GET['success']
+                  ?>
+                </div>
+              <?php endif
+              ?>
+
+            <?php endif
+            ?>
             <div class="card-body py-md-4">
               <form _lpchecked="1">
 
