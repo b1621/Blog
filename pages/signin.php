@@ -11,7 +11,12 @@
   <link href="css/styles2.css" rel="stylesheet" />
 </head>
 
-<body>
+
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),url('../assets/img/bg-masthead.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;">
 
   <form action="../process/signin_process.php" method="POST">
 
@@ -23,9 +28,10 @@
 
 
         <div class="col-md-5">
-          <div class="card">
+          <div class="card" style="background-color: rgb(0,0,0,0.3);">
 
-            <h2 class="card-title text-center my-">Login </h2>
+            <h2 class="card-title text-center my-3" style="color:white;">Login </h2>
+
             <?php if (!empty($_GET)) :
             ?>
               <?php if (array_key_exists('error', $_GET)) : ?>

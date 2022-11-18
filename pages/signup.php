@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="css/signup.css?ver=<?php echo rand(111,999)?>">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),url('../assets/img/bg-masthead.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;">
 
 <form  action="../process/signup_process.php" method="POST">
-<div class="container">
+<div class="container" style="margin-top: 10%; " >
   <div class="row justify-content-center">
   <div class="col-md-5">
-   <div class="card">
-     <h2 class="card-title text-center">Register </h2>
+   <div class="card" style="background-color: rgb(0,0,0,0.3);">
+     <h2 class="card-title text-center my-3" style="color:white;">Register </h2>
       <div class="card-body py-md-4">
        <form _lpchecked="1">
           <div class="form-group">
