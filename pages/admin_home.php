@@ -46,7 +46,7 @@ if (isset($_SESSION['ID'])) {
                             <p class="card-text"><small class="text-muted"><?php echo $blog['Date'];  ?></small></p>
                             <p class="card-text"><?php echo $blog['Article'];  ?></p>
 
-                            <form action="" method="post" style="display: inline;">
+                            <form action="./admin_view.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                                 <button type="submit" class="btn">View</button>
                             </form>
