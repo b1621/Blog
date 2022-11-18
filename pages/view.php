@@ -31,7 +31,7 @@ $changed_date = date("j F, Y, g:i a", strtotime($date));
     <?php
     if ($_SESSION['role'] = 'admin') {
         include_once './components/adminnav.php';
-    } else {
+    } elseif ($_SESSION['role'] = 'user') {
 
         include_once './components/usernav.php';
     }

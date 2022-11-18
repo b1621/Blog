@@ -31,7 +31,7 @@ if (isset($_SESSION['ID'])) {
 
     <body>
         <?php include_once './components/adminnav.php' ?>
-        <div class="container border pt-4" style="">
+        <div class="container border pt-4">
 
             <?php if (empty($result)) : ?>
                 <div>
@@ -45,10 +45,18 @@ if (isset($_SESSION['ID'])) {
                             <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog['Author'];  ?></h6>
                             <p class="card-text"><small class="text-muted"><?php echo $blog['Date'];  ?></small></p>
                             <p class="card-text"><?php echo $blog['Article'];  ?></p>
-                            <a href="#" class="card-link">Card link</a>
+
                             <form action="" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn">Add Favorite</button>
+                                <button type="submit" class="btn">View</button>
+                            </form>
+                            <form action="../process/delete_blog.php" method="post" style="display: inline;">
+                                <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
+                                <button type="submit" class="btn">Edit</button>
+                            </form>
+                            <form action="../process/delete_blog.php" method="post" style="display: inline;">
+                                <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
+                                <button type="submit" class="btn">Delete</button>
                             </form>
 
                         </div>
