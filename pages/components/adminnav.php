@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -13,26 +12,23 @@
         <li class="nav-item">
           <a class="nav-link" href="./create_blog.php">Link</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./user_favorite.php">Favorite</a>
-        </li>
 
         <li class="nav-item">
-         
+
           <form action="../pages/create_blog.php">
-    <input class="btn btn-outline-success" type="submit" value="Wright Blog" />
-</form>
+            <input class="btn btn-outline-success" type="submit" value="Wright Blog" />
+          </form>
         </li>
       </ul>
       <form class="d-flex">
-        <h5> <?php  echo 'welcome  ' . $_SESSION['name'] . '  ';?></h5>
-       
-        <button class="btn btn-outline-success" type="submit"> <a  href = "../process/logout.php?Adminlogout">Logout</a></button>
+        <h5> <?php echo 'welcome  ' . $_SESSION['name'] . '  '; ?></h5>
 
-       
+        <button class="btn btn-outline-success" type="submit"> <a href="../process/logout.php?Adminlogout">Logout</a></button>
 
 
-        
+
+
+
       </form>
     </div>
   </div>
