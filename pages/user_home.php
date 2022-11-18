@@ -12,14 +12,33 @@ if (isset($_SESSION['ID'])) {
     $result = $statement->fetchall(PDO::FETCH_ASSOC);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // echo $_POST['blogid'];
+
         $userid = $_SESSION['ID'];
         $blogid = $_POST['blogid'];
 
+        
+//Check if already in favourite when added
+        $stat = $pdo->prepare('SELECT * FROM favorite WHERE User_id = :userid AND Blog_id = :blogid' );
+        $stat->bindValue(':userid', $userid);
+        $stat->bindValue(':blogid', $blogid);
+        $stat->execute();
+        $res = $stat->fetchAll(PDO::FETCH_ASSOC);
+
+ // Add the blog to favourite
+       if (empty($res)){
         $stm = $pdo->prepare('INSERT INTO favorite (User_id, Blog_id) VALUES (:userid, :blogid)');
         $stm->bindValue(':blogid', $blogid);
         $stm->bindValue(':userid', $userid);
-        $stm->execute();
+        $stm->execute(); 
+       }
+       else{
+
+        echo '<script type="text/JavaScript"> 
+        alert("Alreday added to Favourite");
+        </script>'
+   ;
+  
+       }
     }
 ?>
 
