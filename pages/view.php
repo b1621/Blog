@@ -29,12 +29,7 @@ $changed_date = date("j F, Y, g:i a", strtotime($date));
 <body>
 
     <?php
-    if ($_SESSION['role'] = 'admin') {
-        include_once './components/adminnav.php';
-    } elseif ($_SESSION['role'] = 'user') {
-
-        include_once './components/usernav.php';
-    }
+    include_once './components/usernav.php';
     ?>
 
     <div class="container border">
