@@ -9,6 +9,8 @@
   <title>Sign In</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   <link href="css/styles2.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 
@@ -29,6 +31,10 @@
 
         <div class="col-md-5">
           <div class="card" style="background-color: rgb(0,0,0,0.3);">
+            <div>
+
+              <a href="../index.html" style="float:right;" type="button" class="btn-close mx-3 mt-3" aria-label="Close"></a>
+            </div>
 
             <h2 class="card-title text-center my-3" style="color:white;">Login </h2>
 
