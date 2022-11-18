@@ -27,6 +27,7 @@ if (isset($_POST['Login'])) {
                     $_SESSION["ID"] = $row['Id'];
                     $_SESSION["name"] = $row['User_name'];
                     $_SESSION["email"] = $row['Email'];
+                    $_SESSION['role'] = 'user';
 
                     header("location:../pages/user_home.php");
                 } else {
