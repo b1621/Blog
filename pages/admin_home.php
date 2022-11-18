@@ -31,7 +31,7 @@ if (isset($_SESSION['ID'])) {
 
     <body>
         <?php include_once './components/adminnav.php' ?>
-        <div class="container border pt-4" style="">
+        <div class="container border pt-4">
 
             <?php if (empty($result)) : ?>
                 <div>
