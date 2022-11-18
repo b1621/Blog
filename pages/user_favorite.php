@@ -78,7 +78,7 @@ if (isset($blogids)) {
                         </form>
                         <form action="../process/remove_fav.php" method="post" style="display: inline;">
                             <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
-                            <button type="submit" class="btn" style="background-color: red;
+                            <button type="submit" class="btn" style="background-color: #aa0404;
   border: none;
   color: white;
   padding: 20px;

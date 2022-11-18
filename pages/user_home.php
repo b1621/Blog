@@ -91,7 +91,7 @@ if (isset($_SESSION['ID'])) {
                             </form>
                             <form action="" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn" style="background-color: red;
+                                <button type="submit" class="btn" style="background-color: #aa0404;
   border: none;
   color: white;
   padding: 20px;
