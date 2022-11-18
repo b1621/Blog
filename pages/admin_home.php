@@ -46,11 +46,11 @@ if (isset($_SESSION['ID'])) {
                     <div class="card mb-3" style="width :60%; margin:0 auto; background-color: rgb(0,0,0,0.5);">
                         <div class="card-body">
                             <h5 class="card-title" style="color:white; font-size:1.5rem;"><?php echo $blog['Title'];  ?></h5>
-                            <h6 class="card-subtitle mb-2 " style="color:rgb(255,255,255,0.5);"><?php echo $blog['Author'];  ?></h6>
-                            <p class="card-text"><small  style="color:grey;"><?php echo $blog['Date'];  ?></small></p>
+                            <h6 class="card-subtitle mb-2 " style="color:rgb(255,255,255,0.9);"><?php echo $blog['Author'];  ?></h6>
+                            <p class="card-text"><small  style="color:rgb(255,255,255,0.7);"><?php echo $blog['Date'];  ?></small></p>
                             <p class="card-text" style="color:white;"><?php echo $blog['Article'];  ?></p>
 
-                            <form action="" method="post" style="display: inline;">
+                            <form action="../pages/view.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                                 <button type="submit" class="btn" style="background-color: #04AA6D;
   border: none;

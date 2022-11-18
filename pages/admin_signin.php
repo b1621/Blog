@@ -11,18 +11,22 @@
 
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),url('../assets/img/bg-masthead.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;">
 
   <form action="../process/admin_signin_process.php" method="POST">
     <div class="container mt-5" style="margin-top: 10%;">
       <div class="row justify-content-center">
         <div class="col-md-5">
-          <div class="card">
+          <div class="card" style="background-color: rgb(0,0,0,0.3);">
             <div>
 
-              <a href="../index.html" style="float:right;" type="button" class="btn-close m-3" aria-label="Close"></a>
+              <a href="../index.html" style="float:right;"  type="button" class="btn-close m-3" style="color:white;" aria-label="Close"></a>
             </div>
-            <h2 class="card-title text-center"> Admin Login </h2>
+            <h2 class="card-title text-center" style="color:white;"> Admin Login </h2>
 
 
             <div class="card-body py-md-4">
