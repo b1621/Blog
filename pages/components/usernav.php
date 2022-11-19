@@ -1,6 +1,6 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  <div class="container-fluid" >
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -22,9 +22,17 @@
         </li>
       </ul>
       <form class="d-flex">
-        <h5> <?php  echo 'welcome  ' . $_SESSION['name'] . '  ';?></h5>
+        <h5 style="
+  color: #04AA6D;
+  padding: 2px;
+  text-align: center;
+  height:50;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 10px  ;"> <?php  echo 'welcome  ' . $_SESSION['name'] . '  ';?></h5>
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-        <button class="btn btn-outline-success" type="submit"> <a  href = "../process/logout.php?logout">Logout</a></button>
+        <button class="btn btn-outline-danger" type="submit"> <a style="color: black;text-decoration: none; font-size: 16px;" href = "../process/logout.php?logout">Logout</a></button>
         
       </form>
     </div>

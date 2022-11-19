@@ -21,9 +21,18 @@
         </li>
       </ul>
       <form class="d-flex">
-        <h5> <?php echo 'welcome  ' . $_SESSION['name'] . '  '; ?></h5>
+        <h5 style="
+  color: #04AA6D;
+  padding: 2px;
+  text-align: center;
+  height:50;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 10px  ;"> <?php echo 'welcome  ' . $_SESSION['name'] . '  '; ?></h5>
 
-        <button class="btn btn-outline-success" type="submit"> <a href="../process/logout.php?Adminlogout">Logout</a></button>
+        <button class="btn btn-outline-danger"  type="submit"> <a style="color: black;text-decoration: none; font-size: 16px;
+" href="../process/logout.php?Adminlogout">Logout</a></button>
 
 
 

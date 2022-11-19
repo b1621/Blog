@@ -29,9 +29,13 @@ if (isset($_SESSION['ID'])) {
         <title>Document</title>
     </head>
 
-    <body>
+    <body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%),url('../assets/img/wh.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;">
         <?php include_once './components/adminnav.php' ?>
-        <div class="container border pt-4">
+        <div class="container  pt-4">
 
             <?php if (empty($result)) : ?>
                 <div>
@@ -39,24 +43,28 @@ if (isset($_SESSION['ID'])) {
                 </div>
             <?php else : ?>
                 <?php foreach ($result as $i => $blog) : ?>
-                    <div class="card mb-3" style="width :60%; margin:0 auto;">
+                    <div class="card mb-3" style="width :70%; margin:0 auto; background-color: rgb(0,0,0,0.5);">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $blog['Title'];  ?></h5>
-                            <h6 class="card-subtitle mb-2 text-muted"><?php echo $blog['Author'];  ?></h6>
-                            <p class="card-text"><small class="text-muted"><?php echo $blog['Date'];  ?></small></p>
-                            <p class="card-text"><?php echo $blog['Article'];  ?></p>
+                            <h5 class="card-title" style="color:white; font-size:1.5rem;"><?php echo $blog['Title'];  ?></h5>
+                            <h6 class="card-subtitle mb-2 " style="color:rgb(255,255,255,0.9);"><?php echo $blog['Author'];  ?></h6>
+                            <p class="card-text"><small style="color:rgb(255,255,255,0.7);"><?php echo $blog['Date'];  ?></small></p>
+                            <p class="card-text" style="color:white;"><?php echo $blog['Article'];  ?></p>
+
 
                             <form action="./admin_view.php" method="post" style="display: inline;">
+
+
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn">View</button>
+
+                                <button type="submit" class="btn btn-success">View</button>
                             </form>
                             <form action="./edit_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn">Edit</button>
+                                <button type="button" class="btn btn-primary">Edit</button>
                             </form>
                             <form action="../process/delete_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn">Delete</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
 
                         </div>
