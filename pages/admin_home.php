@@ -49,7 +49,7 @@ if (isset($_SESSION['ID'])) {
                             <h5 class="card-title" style="color:white; font-size:1.5rem;"><?php echo $blog['Title'];  ?></h5>
                             <h6 class="card-subtitle mb-2 " style="color:rgb(255,255,255,0.9);"><?php echo $blog['Author'];  ?></h6>
                             <p class="card-text"><small style="color:rgb(255,255,255,0.7);"><?php echo $blog['Date'];  ?></small></p>
-                            <p class="card-text" style="color:white;"><?php echo $sample_article;  ?></p>
+                            <p class="card-text" style="color:white;"><?php echo $sample_article;  ?> </p>
 
 
                             <form action="./admin_view.php" method="post" style="display: inline;">
