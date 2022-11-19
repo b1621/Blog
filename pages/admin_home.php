@@ -7,7 +7,7 @@ include_once "../process/db_connection.php";
 if (isset($_SESSION['ID'])) {
 
 
-    $statement = $pdo->prepare('SELECT * from blog');
+    $statement = $pdo->prepare('SELECT * from blog ORDER BY Date DESC');
     $statement->execute();
     $result = $statement->fetchall(PDO::FETCH_ASSOC);
 
@@ -60,7 +60,7 @@ if (isset($_SESSION['ID'])) {
                             </form>
                             <form action="./edit_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="button" class="btn btn-primary">Edit</button>
+                                <button type="submit" class="btn btn-primary">Edit</button>
                             </form>
                             <form action="../process/delete_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
