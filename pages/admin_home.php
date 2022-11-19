@@ -50,7 +50,7 @@ if (isset($_SESSION['ID'])) {
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                                 <button type="submit" class="btn">View</button>
                             </form>
-                            <form action="../process/delete_blog.php" method="post" style="display: inline;">
+                            <form action="./edit_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                                 <button type="submit" class="btn">Edit</button>
                             </form>
