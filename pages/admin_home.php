@@ -35,7 +35,7 @@ if (isset($_SESSION['ID'])) {
   background-size: 100% 100%;
   background-position: center;">
         <?php include_once './components/adminnav.php' ?>
-        <div class="container border pt-4">
+        <div class="container  pt-4">
 
             <?php if (empty($result)) : ?>
                 <div>
@@ -43,51 +43,29 @@ if (isset($_SESSION['ID'])) {
                 </div>
             <?php else : ?>
                 <?php foreach ($result as $i => $blog) : ?>
-                    <div class="card mb-3" style="width :60%; margin:0 auto; background-color: rgb(0,0,0,0.5);">
+                    <?php $sample_article = mb_strimwidth($blog['Article'], 0, 200, ' .... readmore'); ?>
+                    <div class="card mb-3" style="width :70%; margin:0 auto; background-color: rgb(0,0,0,0.5);">
                         <div class="card-body">
                             <h5 class="card-title" style="color:white; font-size:1.5rem;"><?php echo $blog['Title'];  ?></h5>
                             <h6 class="card-subtitle mb-2 " style="color:rgb(255,255,255,0.9);"><?php echo $blog['Author'];  ?></h6>
-                            <p class="card-text"><small  style="color:rgb(255,255,255,0.7);"><?php echo $blog['Date'];  ?></small></p>
-                            <p class="card-text" style="color:white;"><?php echo $blog['Article'];  ?></p>
+                            <p class="card-text"><small style="color:rgb(255,255,255,0.7);"><?php echo $blog['Date'];  ?></small></p>
+                            <p class="card-text" style="color:white;"><?php echo $sample_article;  ?></p>
 
-                            <form action="../pages/view.php" method="post" style="display: inline;">
+
+                            <form action="./admin_view.php" method="post" style="display: inline;">
+
+
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn" style="background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height:50;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px ;">View</button>
+
+                                <button type="submit" class="btn btn-success">View</button>
+                            </form>
+                            <form action="./edit_blog.php" method="post" style="display: inline;">
+                                <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
+                                <button type="submit" class="btn btn-primary mx-2">Edit</button>
                             </form>
                             <form action="../process/delete_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn" style="background-color: #0415aa;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height:50;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px ;">Edit</button>
-                            </form>
-                            <form action="../process/delete_blog.php" method="post" style="display: inline;">
-                                <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn" style="background-color: #aa0404;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  height:50;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px ;">Delete</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
 
                         </div>
