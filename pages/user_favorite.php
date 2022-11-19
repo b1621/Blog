@@ -53,7 +53,15 @@ if (isset($blogids)) {
 
         <?php if (empty($blogids)) : ?>
             <div class="mt-4">
-                <h3>No Favorite blog yet!!!</h3>
+               
+                <div class="card mb-3 shadow-sm rounded" style="width :70%; margin:0 auto; background-color: rgb(0,0,0,0.5);">
+                    <div class="card-body">
+                        <h3 style="color:white;">No Favorite blog yet!!!</h3>
+                       
+
+                    </div>
+                </div>
+
             </div>
         <?php else : ?>
             <?php foreach ($blogs as $blog) : ?>

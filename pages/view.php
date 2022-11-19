@@ -26,19 +26,23 @@ $changed_date = date("j F, Y, g:i a", strtotime($date));
     <title>Article</title>
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%),url('../assets/img/wh.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;">
 
     <?php
     include_once './components/usernav.php';
     ?>
 
-    <div class="container ">
+    <div class="container "  style="width :50%; margin:0 auto; background-color: rgb(0,0,0,0.5);">
         <div class="mt-5" style="margin-top: 20px ;">
-            <h1><?php echo $result['Title'] ?></h1>
+            <h1  style="color:white;"><?php echo $result['Title'] ?></h1>
 
-            <p class="text-muted">written by <?php echo $result['Author'], ' | ', $changed_date ?> </p>
+            <p  style="color:rgba(200,200,200,0.8); font-style:Italic" >written by <?php echo $result['Author'], ' | ', $changed_date ?> </p>
 
-            <p style="width: 75%;"><?php echo $result['Article'] ?></p>
+            <p style="width: 100%; color:white;"><?php echo $result['Article'] ?></p>
         </div>
 
     </div>
