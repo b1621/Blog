@@ -76,11 +76,11 @@ if (isset($_SESSION['ID'])) {
 
                             <form action="./view.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn btn-success ">View</button>
+                                <button type="submit" class="btn btn-outline-success btn-sm ">View</button>
                             </form>
                             <form action="" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn btn-primary mx-3">Add Favorite</button>
+                                <button type="submit" class="btn btn-outline-primary btn-sm mx-3">Add Favorite</button>
                             </form>
 
                         </div>

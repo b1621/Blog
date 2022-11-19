@@ -57,15 +57,15 @@ if (isset($_SESSION['ID'])) {
 
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
 
-                                <button type="submit" class="btn btn-success">View</button>
+                                <button type="submit" class="btn btn-outline-success btn-sm">View</button>
                             </form>
                             <form action="./edit_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn btn-primary mx-2">Edit</button>
+                                <button type="submit" class="btn btn-outline-primary btn-sm mx-2">Edit</button>
                             </form>
                             <form action="../process/delete_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
-                                <button type="submit" class="btn btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-outline-danger btn-sm">Delete</button>
                             </form>
 
                         </div>

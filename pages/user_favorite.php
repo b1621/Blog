@@ -66,11 +66,11 @@ if (isset($blogids)) {
                             <p class="card-text" style="color:white;"><?php echo $sample_article;  ?></p>
                             <form action="./view.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
-                                <button type="submit" class="btn btn-success ">View</button>
+                                <button type="submit" class="btn btn-outline-success btn-sm ">View</button>
                             </form>
                             <form action="../process/remove_fav.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog[0]['Blog_id'] ?>">
-                                <button type="submit" class="btn btn-danger">Remove</button>
+                                <button type="submit" class="btn btn-outline-danger btn-sm mx-2">Remove</button>
                             </form>
 
                     </div>
