@@ -63,7 +63,7 @@ if (isset($_SESSION['ID'])) {
   font-size: 16px;
   margin: 4px 2px ;">View</button>
                             </form>
-                            <form action="../process/delete_blog.php" method="post" style="display: inline;">
+                            <form action="../process/edit_blog.php" method="post" style="display: inline;">
                                 <input type="hidden" name="blogid" value="<?php echo $blog['Blog_id'] ?>">
                                 <button type="submit" class="btn" style="background-color: #0415aa;
   border: none;
