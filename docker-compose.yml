@@ -1,0 +1,37 @@
+version: '3.'
+ 
+services:
+  php-env:
+    build: .
+    
+    ports:
+      - 8082:80
+  db:
+    image: mysql:latest
+    container_name: db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    environment:
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: crud
+      MYSQL_PASSWORD: admin
+    ports:
+      - "8081:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_USER: root
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: unless-stopped
+    ports:
+      - 8080:80
+volumes:
+  dbdata:
