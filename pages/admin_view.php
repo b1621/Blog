@@ -29,7 +29,7 @@ $changed_date = date("j F, Y, g:i a", strtotime($date));
 <body>
 
     <?php
-    include_once './components/usernav.php';
+    include_once './components/adminnav.php';
     ?>
 
     <div class="container ">
@@ -39,6 +39,7 @@ $changed_date = date("j F, Y, g:i a", strtotime($date));
             <p class="text-muted">written by <?php echo $result['Author'], ' | ', $changed_date ?> </p>
 
             <p style="width: 75%;"><?php echo $result['Article'] ?></p>
+
         </div>
 
     </div>
