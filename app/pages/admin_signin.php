@@ -24,10 +24,29 @@
           <div class="card" style="background-color: rgb(0,0,0,0.3);">
             <div>
 
-              <a href="../index.html" style="float:right;"  type="button" class="btn-close m-3" style="color:white;" aria-label="Close"></a>
+              <a href="../index.html" style="float:right;" type="button" class="btn-close m-3" style="color:white;" aria-label="Close"></a>
             </div>
             <h2 class="card-title text-center" style="color:white;"> Admin Login </h2>
+            <?php if (!empty($_GET)) :
+            ?>
+              <?php if (array_key_exists('error', $_GET)) : ?>
+                <div style="color: red;" class="ml-4">
 
+
+                  <?php echo $_GET['error'];
+                  ?>
+                </div>
+              <?php else :
+              ?>
+                <div style="color: green;" class="ml-4">
+                  <?php echo $_GET['success']
+                  ?>
+                </div>
+              <?php endif
+              ?>
+
+            <?php endif
+            ?>
 
             <div class="card-body py-md-4">
               <form _lpchecked="1">
@@ -42,7 +61,7 @@
                 </div>
 
                 <div class="d-flex flex-row align-items-center justify-content-between">
-                  <a href="signup.php">Create Account</a>
+
                   <button class="btn btn-primary" value="Login" name="Login">Login</button>
                 </div>
               </form>

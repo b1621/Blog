@@ -26,7 +26,11 @@ $changed_date = date("j F, Y, g:i a", strtotime($date));
     <title>Article</title>
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%),url('../assets/img/wh.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center; color: white">
 
     <?php
     include_once './components/adminnav.php';
