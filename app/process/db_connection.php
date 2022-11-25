@@ -1,8 +1,8 @@
 <?php
 
-$username = 'root';
-$password = '';
-$host = "localhost:3306";
+$username = 'crud';
+$password = 'password';
+$host = "db";
 $dbname = 'crud';
 
 $pdo = new PDO("mysql:host={$host};dbname={$dbname}", $username, $password);

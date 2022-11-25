@@ -1,11 +1,8 @@
-
 <?php
 require_once('db_connection.php');
 session_start();
 
 if (isset($_POST['Login'])) {
-    echo 'working';
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!$_POST['email']) {
             $error[] = 'Email is required';
@@ -17,7 +14,10 @@ if (isset($_POST['Login'])) {
 
             $userPassword = md5($_POST['password']);
 
-            $query = "SELECT * FROM admin_security WHERE Email = '" . $_POST['email'] . "' ";
+            $query = "SELECT * FROM user_security WHERE Email = '" . $_POST['email'] . "' ";
+            // $statment = $pdo->prepare('SELECT * FROM user_security WHERE Email = :email');
+            // $statment->bindValue(':email', $_POST['email']);
+
             $result = mysqli_query($con, $query);
 
             if ($row = mysqli_fetch_assoc($result)) {
@@ -27,18 +27,18 @@ if (isset($_POST['Login'])) {
                     $_SESSION["ID"] = $row['Id'];
                     $_SESSION["name"] = $row['User_name'];
                     $_SESSION["email"] = $row['Email'];
-                    $_SESSION['role'] = 'admin';
+                    $_SESSION['role'] = 'user';
 
-                    header("location:../pages/admin_home.php");
+                    header("location:../pages/user_home.php");
                 } else {
-                    header("location:../pages/admin_signin.php?Invalid = Please Enter correct email and password");
+                    header("location:../pages/signin.php?error= Please Enter correct email and password");
                 }
             } else {
-                header("location:../pages/admin_signin.php?NotUser = Please Create Account First");
+                header("location:../pages/signin.php?error= Please Create Account First");
             }
         } else {
             // Send the error to the signin Page
-            header("location:../pages/admin_signin.php?Empty = Please Fill All Fields");
+            header("location:../pages/signin.php?error= Please Fill All Fields");
         }
     }
 } else {
