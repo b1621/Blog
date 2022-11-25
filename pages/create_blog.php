@@ -12,7 +12,11 @@
     <title>Create</title>
 </head>
 
-<body>
+<body style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.9) 75%, #000 100%),url('../assets/img/wh.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-position: center;">
 
     <div class="container ">
         <div class="border p-5" style="width: 60%; margin:4% auto;">
@@ -35,18 +39,18 @@
             <form action="../process/create_blog.inc.php" method="post">
                 <!-- Title input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="form4Example1" name="title" class="form-control" placeholder="Title" required />
+                    <input type="text" id="form4Example1" name="title" class="form-control" style="background-color: lightgrey;" placeholder="Title" required />
 
                 </div>
                 <!-- Author input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="form4Example1" name="author" class="form-control" placeholder="Author" required />
+                    <input type="text" id="form4Example1" name="author" class="form-control" placeholder="Author" style="background-color: lightgrey;" required />
 
                 </div>
 
                 <!-- Article input -->
                 <div class="form-outline mb-5">
-                    <textarea class="form-control" id="form4Example3" name="article" rows="10" placeholder="Article" required></textarea>
+                    <textarea class="form-control" id="form4Example3" name="article" rows="10" style="background-color: lightgrey;" placeholder="Article" required></textarea>
 
                 </div>
 
