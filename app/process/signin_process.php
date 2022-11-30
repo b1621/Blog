@@ -12,8 +12,8 @@ if (isset($_POST['Login'])) {
         }
         if (empty($error)) {
 
-            $userPassword = md5($_POST['password']);
-
+            $userPassword = $_POST['password'];
+            
             $query = "SELECT * FROM user_security WHERE Email = '" . $_POST['email'] . "' ";
             // $statment = $pdo->prepare('SELECT * FROM user_security WHERE Email = :email');
             // $statment->bindValue(':email', $_POST['email']);
@@ -22,7 +22,9 @@ if (isset($_POST['Login'])) {
 
             if ($row = mysqli_fetch_assoc($result)) {
                 $db_password = $row['Password'];
-                if ($userPassword == $db_password) {
+               // if ($userPassword == $db_password)
+               
+                if (password_verify( $userPassword, $db_password)) {
 
                     $_SESSION["ID"] = $row['Id'];
                     $_SESSION["name"] = $row['User_name'];

@@ -7,9 +7,10 @@ $email = $_POST['email'];
 $date = date('y-m-d');
 $password = $_POST['password'];
 $con_pass = $_POST['confirm-password'];
-$encPass = md5($password);
+$encPass = password_hash($password, PASSWORD_DEFAULT);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
 
     $stm = $pdo->prepare('SELECT * FROM admin_security WHERE Email = :email');
     $stm->bindValue(':email', $email);
@@ -18,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($result) {
 
-        header('Location: ../pages/admin_signup.php?user= Already have an account');
+        header('Location: ../pages/admin_signup.php?error= Already have an account');
     } elseif ($password != $con_pass) {
         header('Location: ../pages/admin_signup.php?error= password doesnot match');
         // echo 'password not equal';
@@ -33,4 +34,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: ../pages/admin_signin.php?success= Account Created Successfully');
         exit();
     }
+
 }

@@ -8,6 +8,7 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $date = date('y-m-d');
 $password = $_POST['password'];
+$confirmpassword = $_POST['confirm-password'];
 
 function generateRandomString($length = 6) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -21,7 +22,8 @@ function generateRandomString($length = 6) {
 $code= generateRandomString();
 
 
-$encPass = md5($password.$code);
+
+$encPass = password_hash($password, PASSWORD_DEFAULT);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$_POST['name']) {
@@ -37,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error[] = 'confirm-password is required';
     }
     if (empty($error)) {
+        if($password == $confirmpassword){
 
         $query = "SELECT * FROM user_security WHERE Email = '" . $_POST['email'] . "' ";
         $result = mysqli_query($con, $query);
@@ -56,5 +59,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: ../pages/signin.php?success= Account Created Successfully');
             exit();
         }
+    }
+    else{
+        $error[] = 'Password not match';
+        header('Location: ../pages/signup.php?error= Password not match');
+    }
+
     }
 }

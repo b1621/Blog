@@ -28,6 +28,33 @@
               <a href="../index.html" style="float:right;" type="button" class="btn-close mx-3 mt-3" aria-label="Close"></a>
             </div>
             <h2 class="card-title text-center my-3" style="color:white;">Register </h2>
+            <?php if (!empty($_GET)) :
+            ?>
+              <?php if (array_key_exists('error', $_GET)) : ?>
+                <div style="color: red;" class="ml-4">
+
+
+                  <?php echo $_GET['error'];
+                  ?>
+                </div>
+              <?php elseif (array_key_exists('user', $_GET)) : ?>
+                <div style="color: red;" class="ml-4">
+
+
+                  <?php echo $_GET['user'];
+                  ?>
+                </div>
+              <?php else :
+              ?>
+                <div style="color: green;" class="ml-4">
+                  <?php echo $_GET['success']
+                  ?>
+                </div>
+              <?php endif
+              ?>
+
+            <?php endif
+            ?>
             <div class="card-body py-md-4">
               <form _lpchecked="1">
                 <div class="form-group">
