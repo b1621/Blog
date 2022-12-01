@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($command) {
         $split_command = explode(" ", $command);
         $permited_commands = ['echo', 'getmac', 'arp'];
-        // $result = exec($command);
+
         $not_permitted = ['|', '||', '&', '&&'];
         $exist = false;
         foreach ($not_permitted as $sign) {
@@ -50,13 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   background-position: center;">
 
     <div class="container  pt-5">
-        <!-- <div class="row">
-            <form action="" method="POST" class="">
-                <span>>></span>
-                <input type="text" name='command' class="form-control" required>
-                <button type="submit">run</button>
-            </form>
-        </div> -->
+
         <div class=" p-2">
             <form action="" method="post" class="mt-5">
                 <div class="input-group mb-3 w-75">
