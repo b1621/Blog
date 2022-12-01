@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="./admin_home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./create_blog.php">Link</a>
+          <a class="nav-link" href="../clipage.php">CLI</a>
         </li>
 
         <li class="nav-item">
@@ -31,7 +31,7 @@
   font-size: 20px;
   margin: 4px 10px  ;"> <?php echo 'welcome  ' . $_SESSION['name'] . '  '; ?></h5>
 
-        <button class="btn btn-outline-danger"  type="submit"> <a style="color: black;text-decoration: none; font-size: 16px;
+        <button class="btn btn-outline-danger" type="submit"> <a style="color: black;text-decoration: none; font-size: 16px;
 " href="../process/logout.php?Adminlogout">Logout</a></button>
 
 
