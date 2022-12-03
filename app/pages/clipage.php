@@ -1,6 +1,5 @@
 <?php
 
-
 $result = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -50,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   background-position: center;">
 
     <div class="container  pt-5">
-
         <div class=" p-2">
             <form action="" method="post" class="mt-5">
                 <div class="input-group mb-3 w-75">
