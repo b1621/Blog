@@ -11,18 +11,18 @@ services:
       - "./db:/docker-entrypoint-initdb.d" # this is how we persist a sql db even when container stops
       - ./my-datavolume:/var/lib/mysql
      
-  www:
+  blog_app:
     build:						
       context: ./
       dockerfile: Dockerfile
-    volumes:
-      - "./app:/var/www/html" # sync the current dir on local machine to the dir of container
+    #volumes:
+    #  - "./app:/var/www/html" # sync the current dir on local machine to the dir of container
     ports:
       - 80:80
       - 443:443 # for future ssl traffic
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    ports:
+    ports: 
       - 8001:80
     environment:
       - PMA_HOST=db
