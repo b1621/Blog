@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($command) {
         $split_command = explode(" ", $command);
-        $permited_commands = ['echo', 'getmac', 'arp'];
+        $permited_commands = ['echo', 'getmac', 'time'];
 
         $not_permitted = ['|', '||', '&', '&&'];
         $exist = false;

@@ -10,7 +10,7 @@
           <a class="nav-link active" aria-current="page" href="./admin_home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../clipage.php">CLI</a>
+          <a class="nav-link" href="./clipage.php">CLI</a>
         </li>
 
         <li class="nav-item">
