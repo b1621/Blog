@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `admin_security` (
   `Id` int(11) NOT NULL,
   `User_name` varchar(25) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Date` DATETIME NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `admin_security` (
 -- Table structure for table `blog`
 --
 
-CREATE TABLE `blog` (
+CREATE TABLE IF NOT EXISTS `blog` (
   `Blog_id` int(11) NOT NULL,
   `Date` DATETIME  NOT NULL DEFAULT current_timestamp(),
   `Author` varchar(255) NOT NULL,
@@ -69,7 +69,7 @@ INSERT INTO `blog` (`Blog_id`, `Date`, `Author`, `Title`, `Article`) VALUES
 -- Table structure for table `favorite`
 --
 
-CREATE TABLE `favorite` (
+CREATE TABLE IF NOT EXISTS `favorite` (
   `Blog_id` int(11) NOT NULL,
   `User_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -80,24 +80,13 @@ CREATE TABLE `favorite` (
 -- Table structure for table `user_security`
 --
 
-CREATE TABLE `user_security` (
+CREATE TABLE IF NOT EXISTS `user_security` (
   `Id` int(6) UNSIGNED NOT NULL,
   `User_name` varchar(25) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Password` varchar(50) NOT NULL,
+  `Password` varchar(255) NOT NULL,
   `Date` DATETIME  NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_security`
---
-
-INSERT INTO `user_security` (`Id`, `User_name`, `Email`, `Password`, `Date`) VALUES
-(1, 'Abuki', 'abubekerabdu85@gmail.com', 'A123456', '2022-11-16'),
-(2, 'Abebe', 'abebe@gmail.com', 'fdb122e7c906013a9bc0cb02c436fa8a', '2022-11-16'),
-(3, 'a', 'a@gmail.com', '0cc175b9c0f1b6a831c399e269772661', '2022-11-16'),
-(4, 's', 's@gmail.com', '03c7c0ace395d80182db07ae2c30f034', '2022-11-22'),
-(5, 'b', 'd@gmail.com', '03c7c0ace395d80182db07ae2c30f034', '2022-11-22');
 
 --
 -- Indexes for dumped tables
